@@ -1,0 +1,30 @@
+# Generate with `xcodegen generate` in this folder; the local package is the repository root.
+name: SplitflapDemo
+options:
+  bundleIdPrefix: dev.scivi
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  SplitflapKit:
+    path: ../..
+targets:
+  SplitflapDemo:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    dependencies:
+      - package: SplitflapKit
+        product: SplitflapKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.scivi.SplitflapDemo
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Splitflap
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "6.0"
+        CODE_SIGN_STYLE: Automatic
+        # iPhone and iPad, and the Mac through Mac Catalyst.
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: YES

@@ -1,0 +1,40 @@
+# SplitflapKit
+
+> Split-flap departure-board text for SwiftUI and UIKit: every letter rolls, flips or flickers into place, played by Core Animation. Swift package `SplitflapKit` (https://github.com/enavermate/SplitflapKit), iOS and iPadOS 15+ and Mac Catalyst 15+, no dependencies. The same board as the React Native library react-native-splitflap.
+
+**Install.** Swift Package Manager: `.package(url: "https://github.com/enavermate/SplitflapKit", from: "0.5.0")`, product `SplitflapKit`.
+
+**Use (SwiftUI).**
+
+```swift
+import SplitflapKit
+
+Splitflap(gate)
+    .splitflapTransition(.flip(surface: .black))
+    .splitflapFont(size: 28, weight: .bold)
+```
+
+**Use (UIKit).** `let board = SplitflapView(text: "MADRID"); board.transition = .roll(); board.text = "LISBOA"` — it has an intrinsic size like a one-line label.
+
+**Settings.**
+
+- `.splitflapTransition(_:)` / `transition`: `.reel()` (default), `.roll()`, `.flip(surface:)` (surface = the colour under the text), `.scramble`; `.reel(direction:)` and `.roll(direction:)` take `.random`, `.auto`, `.up`, `.down`
+- `.splitflapCellWidth(_:)` / `cellWidth`: `.natural` (reel and roll only) or `.uniform`; without it reel/roll reflow like text and flip/scramble keep each letter near its own width
+- `.splitflapTiming(duration:stagger:order:)`: seconds per cell (0.65; flip takes 1.6×), seconds between cells (0.04), `.ltr` `.rtl` `.random`
+- `.splitflapAlphabet(_:)`: `.auto`, `.script(.greek)`, `.letters("…")`
+- `.splitflapLoading(_:length:)` / `isLoading`, `loadingLength`: random words until false; `.cells(n)` or `.range(min:max:)`
+- `.splitflapFont(_:)`, `.splitflapFont(size:weight:design:)`, `.splitflapColor(_:)`, `.splitflapLetterSpacing(_:)`, `.splitflapTabularDigits(_:)` (on by default)
+- `.splitflapSeed(_:)`, `.splitflapContentKey(_:)`, `.splitflapAnimatesOnAppear(_:)`, `.splitflapReduceMotion(_:)`
+- `.onSplitflapTransitionStart { text in }`, `.onSplitflapTransitionEnd { text, interrupted in }`
+
+**Scripts.** Latin, Cyrillic, Greek, Armenian, Georgian, the Indic and Southeast Asian scripts, kana and many numeral systems roll through their own alphabets; anything else (CJK, Hangul, symbols) changes in one step. Right-to-left scripts are not supported.
+
+## Docs
+
+- [README](https://raw.githubusercontent.com/enavermate/SplitflapKit/master/README.md): install, every setting, platforms
+- [Changelog](https://raw.githubusercontent.com/enavermate/SplitflapKit/master/CHANGELOG.md): release history
+
+## Optional
+
+- [react-native-splitflap](https://github.com/enavermate/react-native-splitflap): the same board for React Native and Expo
+- [How the board is built](https://scivi.dev/oss/react-native-splitflap): planner, Core Animation player, measurement

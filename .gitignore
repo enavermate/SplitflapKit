@@ -1,0 +1,7 @@
+# Swift Package Manager and Xcode leave these behind.
+.DS_Store
+.build/
+.swiftpm/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/

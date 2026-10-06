@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  planner:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+      # The view needs UIKit (iOS and Mac Catalyst); the flag leaves it out so the planner's tests run
+      # on the Mac.
+      - name: The planner against react-native-splitflap's golden plans
+        run: swift test -Xswiftc -DSPLITFLAP_HOST_TESTS
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build for iOS and iPadOS
+        run: xcodebuild -scheme SplitflapKit -destination "generic/platform=iOS Simulator" build -quiet
+      - name: Build for Mac Catalyst
+        run: xcodebuild -scheme SplitflapKit -destination "generic/platform=macOS,variant=Mac Catalyst" build -quiet
+      - name: Build the demo app
+        run: xcodebuild -project Examples/SplitflapDemo/SplitflapDemo.xcodeproj -scheme SplitflapDemo -destination "generic/platform=iOS Simulator" build -quiet CODE_SIGNING_ALLOWED=NO

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "SplitflapKit",
+  "description": "Split-flap departure-board text for SwiftUI and UIKit: every letter rolls, flips or flickers into place, played by Core Animation",
+  "excludeFolders": [
+    "Tests",
+    "Examples",
+    ".github",
+    ".devin"
+  ],
+  "excludeFiles": [
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "rules": [
+    "Add the package https://github.com/enavermate/SplitflapKit with Swift Package Manager and import SplitflapKit; the view is UIKit-based and runs on iOS and iPadOS 15+ and on the Mac through Mac Catalyst; native macOS (AppKit) is not supported",
+    "In SwiftUI use Splitflap(text) with the splitflap\u2026 modifiers; in UIKit use SplitflapView and set text to animate",
+    "The flip transition needs the colour under the text: .flip(surface: .black); reel and roll take a direction",
+    "cellWidth is .natural (reel and roll only) or .uniform; without it flip and scramble keep each letter near its own width",
+    "Durations are in seconds (duration 0.65, stagger 0.04), not milliseconds"
+  ]
+}
