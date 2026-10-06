@@ -167,8 +167,16 @@ private func rowAt(_ row: Int, _ step: Int) -> [String] {
 }
 
 /// Each column as wide as its longest value, as a real board has a fixed row of flaps.
-private let widths = (0..<4).map { c in rows.flatMap { [$0.0[c], $0.1[c]] }.map(\.count).max() ?? 0 }
-    + [statuses.map(\.count).max() ?? 0]
+// Spelled out step by step: as one expression it is more than Xcode 16's type checker will solve.
+private let widths: [Int] = {
+    var widths: [Int] = []
+    for column in 0..<4 {
+        let values: [String] = rows.flatMap { [$0.0[column], $0.1[column]] }
+        widths.append(values.map { $0.count }.max() ?? 0)
+    }
+    widths.append(statuses.map { $0.count }.max() ?? 0)
+    return widths
+}()
 
 private func pad(_ text: String, _ width: Int) -> String {
     text + String(repeating: " ", count: max(0, width - text.count))

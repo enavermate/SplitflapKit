@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.5.1](https://github.com/enavermate/SplitflapKit/compare/0.5.0...0.5.1) — 2026-10-05
+
+### Fixed
+
+- The demo app builds with Xcode 16 too
+
 ## [0.5.0] — 2026-10-05
 
 ### Added
