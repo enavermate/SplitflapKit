@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.2](https://github.com/enavermate/SplitflapKit/compare/0.5.1...0.5.2) — 2026-10-06
+
+### Added
+
+- Recipes in the README and the documentation: a departure board, prices, a clock, loading words
+  instead of a skeleton, custom alphabets, list rows, callbacks, UIKit and the planner
+
 ## [0.5.1](https://github.com/enavermate/SplitflapKit/compare/0.5.0...0.5.1) — 2026-10-05
 
 ### Fixed

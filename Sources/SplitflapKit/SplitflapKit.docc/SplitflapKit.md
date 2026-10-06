@@ -17,6 +17,10 @@ Type, Reduce Motion and VoiceOver.
 
 ## Topics
 
+### Essentials
+
+- <doc:Recipes>
+
 ### SwiftUI
 
 - ``Splitflap``
