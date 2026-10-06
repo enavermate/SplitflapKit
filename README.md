@@ -50,7 +50,7 @@ https://github.com/enavermate/SplitflapKit
 or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/enavermate/SplitflapKit", from: "0.5.0")
+.package(url: "https://github.com/enavermate/SplitflapKit", from: "0.5.3")
 ```
 
 iOS and iPadOS 15 or later, and Mac Catalyst 15 or later.

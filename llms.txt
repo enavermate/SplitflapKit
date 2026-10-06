@@ -2,7 +2,7 @@
 
 > Split-flap departure-board text for SwiftUI and UIKit: every letter rolls, flips or flickers into place, played by Core Animation. Swift package `SplitflapKit` (https://github.com/enavermate/SplitflapKit), iOS and iPadOS 15+ and Mac Catalyst 15+, no dependencies. The same board as the React Native library react-native-splitflap.
 
-**Install.** Swift Package Manager: `.package(url: "https://github.com/enavermate/SplitflapKit", from: "0.5.0")`, product `SplitflapKit`.
+**Install.** Swift Package Manager: `.package(url: "https://github.com/enavermate/SplitflapKit", from: "0.5.3")`, product `SplitflapKit`.
 
 **Use (SwiftUI).**
 

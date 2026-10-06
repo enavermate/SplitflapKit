@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.3](https://github.com/enavermate/SplitflapKit/compare/0.5.2...0.5.3) — 2026-10-06
+
+- Maintenance only: nothing a consumer of the package sees changed
+
 ## [0.5.2](https://github.com/enavermate/SplitflapKit/compare/0.5.1...0.5.2) — 2026-10-06
 
 ### Added
